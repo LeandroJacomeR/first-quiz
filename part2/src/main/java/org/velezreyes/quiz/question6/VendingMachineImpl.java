@@ -26,6 +26,9 @@ public class VendingMachineImpl implements VendingMachine{
 
     for (int i = 0; i < this.drinks.length; i++) {
       if (this.drinks[i].equals(name) && name.equals("ScottCola")){
+        if (this.money < 75){
+          throw new NotEnoughMoneyException();
+        }
         this.money -= 75;
       }
       if (this.drinks[i].equals(name) && name.equals("KarenTea")){
